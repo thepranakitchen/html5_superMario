@@ -33,6 +33,17 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"\/stylesheets\/css\/imgs\/cloudTile.png": {
+		"ft": 32768,
+		"iS": 9959,
+		"oA": 0,
+		"oAP": "\/stylesheets\/css\/imgs\/cloudTile.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
 	"\/stylesheets\/css\/imgs\/groundTile.jpg": {
 		"ft": 16384,
 		"iS": 26281,
