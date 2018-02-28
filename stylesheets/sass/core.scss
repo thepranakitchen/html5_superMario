@@ -3,6 +3,28 @@
 // VARS///////
 $groundTileDim: 128px;
 
+// PLACEHOLDERS========++++++
+%cloud{
+  background: url('imgs/cloudTile.png') no-repeat;
+  background-size: contain;
+  position: fixed;
+}
+
+%pipe{
+  background: url('imgs/pipeTile.png') no-repeat;
+  background-size: contain;
+  position: fixed;
+}
+
+%cloudAnimation{
+  animation: movingCloud;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+
+// VARIABLES------_________------
 
 
 body{
@@ -27,30 +49,120 @@ body{
 }
 
 
+#cloud1{
+  top: 25%;
+  left: 15%;
+
+  @extend %cloudAnimation;
+}
+
+
+
+#cloud2{
+  top: 15%;
+  left: 30%;
+
+  @extend %cloudAnimation;
+
+}
+
+#cloud3{
+  top: 12%;
+  left: 50%;
+
+  @extend %cloudAnimation;
+}
+
+#pipe1{
+  height: 250px;
+  width: 120px;
+  bottom: 10%;
+  right:  20%;
+}
+
+#pipe2{
+  height: 250px;
+  width: 120px;
+  bottom: 5%;
+  right:  40%;
+}
+
+#boxAndBrick{
+  height:  45px;
+  width:   45px*6;
+  font-size: 0;
+
+  position: fixed;
+  bottom: 41%;
+  left: 7%;
+}
+
+
 
 
 // *******CLASSES
 
-.cloud{
+
+.c1{
   height: 125px;
   width: 125px;
-  position: relative;
-  top: 50px;
-  left: 150px;
-
-
-  background: url('imgs/cloudTile.png') no-repeat;
-  background-size: 125px;
-
-
-  animation: movingCloud;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-
+  @extend %cloud;
 }
 
-//  ANIMTATIONS ++++++++++
+.c2{
+  height: 200px;
+  width: 200px;
+  @extend %cloud;
+}
+
+.c3{
+  height: 250px;
+  width: 250px;
+  @extend %cloud;
+}
+
+
+.p1{
+  @extend %pipe;
+}
+
+.p2{
+  @extend %pipe;
+}
+
+.box{
+  height: 45px;
+  width:  45px;
+  display: inline-block;
+}
+
+.coin{
+  background: url('imgs/questionBlockTile.png') no-repeat;
+  background-size: contain;
+}
+
+.brick{
+  background: url('imgs/brickBlockTile.png') no-repeat;
+  background-size: contain;
+}
+
+.flower{
+  height: 190px;
+  width:  67px;
+  position: fixed;
+  bottom: 33%;
+  right:  22.2%;
+  background:url('imgs/flower_1.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  animation-name: flowerBite, flowerMove;
+  animation-duration: .25s, 2s;
+  animation-iteration-count: infinite;
+}
+
+
+ // ANIMTATIONS ++++++++++
 
 @keyframes movingCloud{
   0%{
@@ -61,5 +173,40 @@ body{
   }
   100%{
     transform: translateX(0px);
+  }
+}
+
+@keyframes flowerBite{
+  0%{
+    background:url('imgs/flower1.png');
+    background-size: contain;
+  }
+
+  50%{
+    background:url('imgs/flower1.png');
+    background-size: contain;
+  }
+
+  100%{
+    background:url('img/flower2.png');
+    background-size: contain;
+  }
+}
+
+@keyframes flowerMove{
+  0%{
+    bottom:0%;
+  }
+
+  25%{
+    bottom:33%;
+  }
+
+  50%{
+    bottom: 33%;
+  }
+
+  100%{
+    bottom: 0%;
   }
 }
