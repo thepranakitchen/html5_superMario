@@ -1,7 +1,28 @@
 // Core SCSS File
+
+// VARS///////
+$groundTileDim: 128px;
+
+
+
 body{
   height: 100vh;
   width: 100vw;
   background: linear-gradient(#1c8dff, #85eaef);
   font-family: sans-serif;
+}
+
+
+// IDS //////////////
+
+#ground{
+  height: $groundTileDim;
+  width: 100vw;
+
+  background: url('imgs/groundTile.jpg') repeat-x;
+  background-size: $groundTileDim;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+
 }
